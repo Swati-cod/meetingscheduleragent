@@ -59,6 +59,23 @@ def index():
     conn.close()
 
     total_meetings = len(meetings)
+
+    return render_template(
+        "index.html",
+        people=availability.keys(),
+        result=result,
+        meetings=meetings,
+        total_meetings=total_meetings
+    )
+
+@app.route("/analysis")
+def analysis():
+    conn = get_db_connection()
+    meetings = conn.execute("SELECT * FROM meetings").fetchall()
+    conn.close()
+
+    total_meetings = len(meetings)
+
     time_slots = [m["time_slot"] for m in meetings]
     most_common_time = Counter(time_slots).most_common(1)
     most_common_time = most_common_time[0][0] if most_common_time else "N/A"
@@ -69,12 +86,9 @@ def index():
             person_count[p] += 1
 
     return render_template(
-        "index.html",
-        people=availability.keys(),
-        result=result,
-        meetings=meetings,
+        "analysis.html",
         total_meetings=total_meetings,
-        common_time=most_common_time,
+        most_common_time=most_common_time,
         person_count=person_count
     )
 
