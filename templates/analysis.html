@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h2>Meeting Data Analysis</h2>
+
+<p><strong>Total Meetings:</strong> {{ total_meetings }}</p>
+<p><strong>Most Common Time Slot:</strong> {{ most_common_time }}</p>
+
+<h3>Meetings per Participant</h3>
+<ul>
+{% for person, count in person_count.items() %}
+<li>{{ person }} : {{ count }}</li>
+{% endfor %}
+</ul>
+
+<a href="/"><button>Back to Scheduler</button></a>
+
+</div>
+</body>
+</html>
