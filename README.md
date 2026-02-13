@@ -1,31 +1,34 @@
-# Meeting Scheduler Agent
+# 🚀 Meeting Scheduler Agent with Data Analysis
 
-🔗 Live Demo: https://meeting-scheduler-o4i6.onrender.com
+🔗 **Live Demo:**  
+https://meetingscheduleragent.onrender.com
 
-An intelligent web-based **Meeting Scheduler Agent** built using **Flask** that automatically schedules meetings, stores past records, and displays useful statistics.
+An intelligent web-based **Meeting Scheduler Agent** built using **Flask** that automatically schedules meetings, stores history in a database, and provides a separate Data Analysis page with statistics.
 
 ---
 
-## 🚀 Features
+## 📌 Features
 
-- 📅 Automatically schedules meetings based on participant availability  
-- 🕒 Stores past meeting records using SQLite  
-- 📊 Displays statistics:
-  - Total number of meetings
+- 📅 Automatic meeting scheduling based on participant availability
+- 🗂 Persistent storage using SQLite database
+- 📊 Dedicated Data Analysis page
+  - Total meetings count
   - Most common meeting time slot
-  - Meetings per participant  
-- 🌐 Live deployment using Render  
+  - Meetings per participant
+- 🌐 Deployed live using Render (Web Service)
+- 🧠 Demonstrates Intelligent Agent behavior
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-- Backend: Python, Flask  
-- Frontend: HTML, CSS  
-- Database: SQLite  
-- Deployment: Render  
-- Version Control: GitHub  
+- **Backend:** Python, Flask
+- **Frontend:** HTML, CSS
+- **Database:** SQLite
+- **Deployment:** Render
+- **Version Control:** GitHub
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
+
