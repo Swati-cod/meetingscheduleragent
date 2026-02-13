@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Advanced Meeting Scheduler Agent</title>
+    <title>Meeting Scheduler</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 <div class="container">
-<h2>Advanced Meeting Scheduler Agent</h2>
+<h2>Meeting Scheduler Agent</h2>
 
 <form method="POST">
-    <p class="label">Select Participants:</p>
+    <p>Select Participants:</p>
     {% for person in people %}
-        <label class="checkbox">
+        <label>
             <input type="checkbox" name="participants" value="{{ person }}">
             {{ person }}
-        </label>
+        </label><br>
     {% endfor %}
     <button type="submit">Schedule Meeting</button>
 </form>
@@ -24,26 +24,9 @@
 {% endif %}
 
 <hr>
+<h3>Total Meetings: {{ total_meetings }}</h3>
 
-<h3>Statistics</h3>
-<p>Total Meetings: {{ total_meetings }}</p>
-<p>Most Common Time Slot: {{ common_time }}</p>
-
-<ul>
-{% for person, count in person_count.items() %}
-<li>{{ person }} : {{ count }}</li>
-{% endfor %}
-</ul>
-
-<hr>
-
-<h3>Past Meeting Records</h3>
-{% for m in meetings %}
-<div class="history">
-<strong>{{ m["time_slot"] }}</strong><br>
-Participants: {{ m["participants"] }}
-</div>
-{% endfor %}
+<a href="/analysis"><button>Go to Data Analysis</button></a>
 
 </div>
 </body>
